@@ -21,7 +21,7 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#003332] mb-4">
               Latest Stories
             </h2>
             <p className="font-body text-muted-foreground max-w-xl mx-auto">

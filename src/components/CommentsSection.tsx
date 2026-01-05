@@ -45,7 +45,7 @@ const CommentsSection = ({ storyId }: CommentsSectionProps) => {
     <section className="mt-12 border-t border-border pt-8">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 font-display text-xl font-semibold text-foreground mb-6 hover:text-primary transition-colors"
+        className="flex items-center gap-2 font-display text-xl font-semibold text-[#003332] mb-6 hover:text-primary transition-colors"
       >
         <MessageCircle className="w-5 h-5" />
         <span>Comments ({comments?.length || 0})</span>

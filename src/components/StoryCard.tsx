@@ -37,8 +37,8 @@ const StoryCard = ({ story, index }: StoryCardProps) => {
           )}
           
           <div className="p-6">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-              <span className="font-body">{story.author_name}</span>
+            <div className="flex items-center gap-2 text-sm text-[#003332] mb-3">
+              <span className="text-[#003332]">{story.author_name}</span>
               <span>•</span>
               <div className="flex items-center gap-1">
                 <Clock className="w-3 h-3" />
@@ -46,11 +46,11 @@ const StoryCard = ({ story, index }: StoryCardProps) => {
               </div>
             </div>
             
-            <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+            <h3 className="font-display text-xl font-semibold text-[#003332] mb-2 group-hover:text-primary transition-colors">
               {story.title}
             </h3>
             
-            <p className="font-body text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+            <p className="font-body text-[#003332] leading-relaxed mb-4 line-clamp-3">
               {excerpt}
             </p>
             

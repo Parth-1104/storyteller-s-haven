@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,104 +6,108 @@
 
 @layer base {
   :root {
-    /* Warm, literary cream palette */
-    --background: 40 33% 97%;
-    --foreground: 25 30% 15%;
+    /* Teal → dark blue theme palette */
+    --background: 0 0% 100%; /* white bg */
 
-    --card: 40 40% 98%;
-    --card-foreground: 25 30% 15%;
+    /* Main foreground text: dark blue */
+    --foreground: 220 60% 30%;
 
-    --popover: 40 40% 98%;
-    --popover-foreground: 25 30% 15%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 60% 30%;
 
-    /* Warm amber primary */
-    --primary: 32 80% 45%;
-    --primary-foreground: 40 33% 97%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 220 60% 30%;
 
-    /* Soft cream secondary */
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 25 30% 25%;
+    /* Primary remains teal if you still want teal accents */
+    --primary: 175 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft gray secondary */
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 220 60% 25%;
 
     /* Muted tones */
-    --muted: 35 20% 90%;
-    --muted-foreground: 25 15% 45%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 220 60% 28%;
 
-    /* Warm accent */
-    --accent: 28 70% 50%;
-    --accent-foreground: 40 33% 97%;
+    /* Teal accent (kept) */
+    --accent: 175 70% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 25% 88%;
-    --input: 35 25% 88%;
-    --ring: 32 80% 45%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 175 100% 35%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --story-bg: 40 45% 96%;
-    --story-text: 25 25% 20%;
-    --story-accent: 32 75% 48%;
-    --hero-gradient: linear-gradient(135deg, hsl(35 40% 95%) 0%, hsl(40 50% 90%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(25 30% 15% / 0.08);
-    --card-hover-shadow: 0 12px 40px -8px hsl(25 30% 15% / 0.15);
+    --story-bg: 0 0% 96%;
+    --story-text: 220 60% 25%; /* dark blue story text */
+    --story-accent: 175 100% 35%;
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 95%) 0%, hsl(175 50% 90%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(175 100% 35% / 0.08);
+    --card-hover-shadow: 0 12px 40px -8px hsl(175 100% 35% / 0.15);
 
     /* Sidebar tokens */
-    --sidebar-background: 40 35% 96%;
-    --sidebar-foreground: 25 25% 25%;
-    --sidebar-primary: 32 80% 45%;
-    --sidebar-primary-foreground: 40 33% 97%;
-    --sidebar-accent: 35 30% 92%;
-    --sidebar-accent-foreground: 25 30% 25%;
-    --sidebar-border: 35 25% 88%;
-    --sidebar-ring: 32 80% 45%;
+    --sidebar-background: 0 0% 96%;
+    --sidebar-foreground: 220 60% 25%; /* dark blue */
+    --sidebar-primary: 175 100% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 220 60% 25%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 175 100% 35%;
   }
 
   .dark {
-    --background: 25 25% 8%;
-    --foreground: 40 30% 92%;
+    --background: 175 100% 5%;
 
-    --card: 25 20% 12%;
-    --card-foreground: 40 30% 92%;
+    /* Light blue foreground for contrast on dark bg */
+    --foreground: 210 80% 85%;
 
-    --popover: 25 20% 12%;
-    --popover-foreground: 40 30% 92%;
+    --card: 175 100% 10%;
+    --card-foreground: 210 80% 85%;
 
-    --primary: 35 75% 55%;
-    --primary-foreground: 25 25% 8%;
+    --popover: 175 100% 10%;
+    --popover-foreground: 210 80% 85%;
 
-    --secondary: 25 15% 18%;
-    --secondary-foreground: 40 30% 90%;
+    --primary: 175 100% 55%;
+    --primary-foreground: 175 100% 5%;
 
-    --muted: 25 15% 18%;
-    --muted-foreground: 35 15% 55%;
+    --secondary: 175 100% 15%;
+    --secondary-foreground: 210 80% 90%;
 
-    --accent: 32 70% 50%;
-    --accent-foreground: 25 25% 8%;
+    --muted: 175 100% 18%;
+    --muted-foreground: 210 70% 60%;
+
+    --accent: 175 70% 50%;
+    --accent-foreground: 175 100% 5%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 15% 20%;
-    --input: 25 15% 20%;
-    --ring: 35 75% 55%;
+    --border: 175 100% 20%;
+    --input: 175 100% 20%;
+    --ring: 175 100% 55%;
 
-    --story-bg: 25 20% 10%;
-    --story-text: 40 25% 88%;
-    --story-accent: 35 70% 55%;
-    --hero-gradient: linear-gradient(135deg, hsl(25 20% 10%) 0%, hsl(25 25% 15%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --card-hover-shadow: 0 12px 40px -8px hsl(0 0% 0% / 0.4);
+    --story-bg: 175 100% 10%;
+    --story-text: 210 80% 88%; /* light blue text on dark */
+    --story-accent: 175 100% 55%;
+    --hero-gradient: linear-gradient(135deg, hsl(175 100% 10%) 0%, hsl(175 100% 15%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(175 100% 35% / 0.3);
+    --card-hover-shadow: 0 12px 40px -8px hsl(175 100% 35% / 0.4);
 
-    --sidebar-background: 25 20% 10%;
-    --sidebar-foreground: 40 30% 90%;
-    --sidebar-primary: 35 75% 55%;
-    --sidebar-primary-foreground: 25 25% 8%;
-    --sidebar-accent: 25 15% 18%;
-    --sidebar-accent-foreground: 40 30% 90%;
-    --sidebar-border: 25 15% 20%;
-    --sidebar-ring: 35 75% 55%;
+    --sidebar-background: 175 100% 10%;
+    --sidebar-foreground: 210 80% 90%;
+    --sidebar-primary: 175 100% 55%;
+    --sidebar-primary-foreground: 175 100% 5%;
+    --sidebar-accent: 175 100% 18%;
+    --sidebar-accent-foreground: 210 80% 90%;
+    --sidebar-border: 175 100% 20%;
+    --sidebar-ring: 175 100% 55%;
   }
 }
 
@@ -114,22 +118,29 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Lora', Georgia, serif;
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: "Oxanium", sans-serif;
     @apply tracking-tight;
   }
 }
 
 @layer components {
   .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: "Oxanium", sans-serif;
+    /* Dark blue for titles */
+    color: #002244;
   }
 
   .font-body {
-    font-family: 'Lora', Georgia, serif;
+    font-family: "Oxanium", sans-serif;
+    /* Dark blue for body */
+    color: #003366;
   }
 
   .story-content {

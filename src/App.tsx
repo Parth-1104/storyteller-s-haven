@@ -8,6 +8,7 @@ import StoryPage from "./pages/StoryPage";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
 import NotFound from "./pages/NotFound";
+import Aboutme from "./pages/Aboutme";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,10 @@ const App = () => (
           <Route path="/story/:id" element={<StoryPage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/about" element={<Aboutme />} />
+
           <Route path="*" element={<NotFound />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

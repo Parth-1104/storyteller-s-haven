@@ -61,7 +61,7 @@ const StoryPage = () => {
       <Header />
 
       <main className="pt-24 pb-16">
-        {/* Hero Image */}
+        {/* Hero Image with dark overlay */}
         {story.cover_image && (
           <div className="w-full h-[40vh] relative overflow-hidden">
             <img
@@ -69,75 +69,83 @@ const StoryPage = () => {
               alt={story.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/40 to-transparent" />
           </div>
         )}
 
         <article className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
+            {/* Back Link */}
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-body mb-8"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-body mb-8 block"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Stories
             </Link>
 
+            {/* Header */}
             <motion.header
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={story.cover_image ? '-mt-32 relative z-10' : 'mt-8'}
+              className={story.cover_image 
+                ? '-mt-32 relative z-20 bg-card/95 backdrop-blur-sm p-8 rounded-t-2xl border-b border-border/50' 
+                : 'mt-8'
+              }
             >
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#003332] mb-8 leading-tight">
                 {story.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-8">
-                <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  <span className="font-body">{story.author_name}</span>
+              <div className="flex flex-wrap items-center gap-6 text-muted-foreground p-6 bg-card/90 backdrop-blur-sm rounded-2xl border border-border/30">
+                <div className="flex items-center gap-3">
+                  <User className="w-5 h-5 text-foreground/80" />
+                  <span className="font-body text-lg">{story.author_name}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span className="font-body">
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-foreground/80" />
+                  <span className="font-body text-lg">
                     {format(new Date(story.created_at), 'MMMM d, yyyy')}
                   </span>
                 </div>
               </div>
             </motion.header>
 
+            {/* Story Content */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="bg-card rounded-xl p-8 md:p-12 card-elevated mb-8"
+              className="bg-card rounded-3xl p-8 md:p-12 lg:p-16 card-elevated mb-12 border border-border/30"
             >
-              <div className="story-content">
+              <div className="story-content prose prose-lg max-w-none">
                 {paragraphs.map((paragraph, index) => (
-                  <p key={index} className={index === 0 ? '' : 'first-letter:text-base first-letter:float-none first-letter:mr-0'}>
+                  <p key={index} className="mb-8 last:mb-0">
                     {paragraph}
                   </p>
                 ))}
               </div>
             </motion.div>
 
+            {/* Actions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 mb-8"
             >
               <LikeButton storyId={story.id} />
             </motion.div>
 
+            {/* Comments */}
             <CommentsSection storyId={story.id} />
           </div>
         </article>
       </main>
 
-      <footer className="border-t border-border py-8">
+      <footer className="border-t border-border py-12 mt-24">
         <div className="container mx-auto px-6 text-center">
-          <p className="font-body text-muted-foreground">
+          <p className="font-body text-muted-foreground text-lg">
             © {new Date().getFullYear()} StoryHaven. All stories belong to their respective authors.
           </p>
         </div>

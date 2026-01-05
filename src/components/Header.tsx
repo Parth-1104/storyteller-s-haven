@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { BookOpen, LogIn } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
+
+
 
 const Header = () => {
   const { user, isAdmin, signOut, loading } = useAuth();
@@ -16,23 +19,32 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-              <BookOpen className="w-6 h-6 text-primary" />
+            <div className=" rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <img className='h-9 w-9 rounded-full'  src={logo} alt="" />
             </div>
-            <span className="font-display text-2xl font-bold text-foreground">
-              Story<span className="text-primary">Haven</span>
+            <span className="text-[#003332] text-2xl font-bold ">
+            अक्षरा<span className="text-[#0D818B]">वृत</span>
             </span>
           </Link>
 
           <nav className="flex items-center gap-4">
             <Link
               to="/"
-              className="font-body text-muted-foreground hover:text-foreground transition-colors"
+              className="font-body text-[#0D818B] hover:text-[#0D818B] transition-colors"
             >
               Stories
             </Link>
+
+
+            <Link
+              to="/about"
+              className="font-body text-[#0D818B] hover:text-[#0D818B] transition-colors"
+            >
+              About me 
+            </Link>
+
             
-            {!loading && (
+            {/* {!loading && (
               <>
                 {isAdmin && (
                   <Link to="/admin">
@@ -53,14 +65,16 @@ const Header = () => {
                   </Button>
                 ) : (
                   <Link to="/auth">
-                    <Button variant="default" size="sm" className="font-body gap-2">
+                    <Button variant="default" size="sm" className="font-body text-[#003332] gap-2">
                       <LogIn className="w-4 h-4" />
                       Admin Login
                     </Button>
                   </Link>
                 )}
               </>
-            )}
+            )} */}
+
+            
           </nav>
         </div>
       </div>
