@@ -44,7 +44,7 @@ const Header = () => {
             </Link>
 
             
-            {/* {!loading && (
+            {!loading && (
               <>
                 {isAdmin && (
                   <Link to="/admin">
@@ -67,12 +67,12 @@ const Header = () => {
                   <Link to="/auth">
                     <Button variant="default" size="sm" className="font-body text-[#003332] gap-2">
                       <LogIn className="w-4 h-4" />
-                      Admin Login
+                       Login
                     </Button>
                   </Link>
                 )}
               </>
-            )} */}
+            )}
 
             
           </nav>
